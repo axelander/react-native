@@ -58,13 +58,13 @@ public class ReactTextViewManager extends BaseViewManager<ReactTextView, ReactTe
   @ReactProp(name = ViewProps.TEXT_ALIGN)
   public void setTextAlign(ReactTextView view, @Nullable String textAlign) {
     if (textAlign == null || "auto".equals(textAlign)) {
-      view.setGravity(Gravity.NO_GRAVITY);
+      view.setGravity(Gravity.NO_GRAVITY | Gravity.CENTER_VERTICAL);
     } else if ("left".equals(textAlign)) {
-      view.setGravity(Gravity.LEFT);
+      view.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
     } else if ("right".equals(textAlign)) {
-      view.setGravity(Gravity.RIGHT);
+      view.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
     } else if ("center".equals(textAlign)) {
-      view.setGravity(Gravity.CENTER_HORIZONTAL);
+      view.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
     } else {
       throw new JSApplicationIllegalArgumentException("Invalid textAlign: " + textAlign);
     }
